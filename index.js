@@ -1,7 +1,8 @@
 require("dotenv").config();
 const debug = require("debug")("calculator:root");
 const { program } = require("commander");
-const { suma, resta, multiplicacion } = require("./functions");
+const chalk = require("chalk");
+const { suma, resta, multiplicacion, division } = require("./functions");
 
 program.option("--a <number>");
 program.option("--b <number>");
@@ -13,10 +14,12 @@ const { a, b } = program.opts();
 const resultadoSuma = suma(a, b);
 const resultadoResta = resta(a, b);
 const resultadoMultiplicacion = multiplicacion(a, b);
+const resultadoDivision = division(a, b);
 
 debug(
   `Resultados: 
-  ${a}+${b} = ${resultadoSuma},
-  ${a}-${b} =${resultadoResta},
-  ${a}*${b} = ${resultadoMultiplicacion}`
+  ${a}+${b} = ${chalk.bold.yellow(resultadoSuma)},
+  ${a}-${b} =${chalk.bold.red(resultadoResta)},
+  ${a}*${b} = ${chalk.bold.green(resultadoMultiplicacion)}
+  ${a}/${b} = ${chalk.bold.blue(resultadoDivision)}`
 );
