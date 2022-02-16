@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "chalk": "^4.1.2",
-    "comander": "^0.0.1-security",
+    "commander": "^9.0.0",
     "debug": "^4.3.3",
     "dotenv": "^16.0.0",
     "prompt": "^1.2.1"
