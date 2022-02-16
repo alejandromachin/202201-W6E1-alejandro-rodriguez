@@ -11,6 +11,11 @@ program.parse();
 
 const { a, b } = program.opts();
 
+if (typeof a !== "number" || typeof b !== "number") {
+  debug("ERROR, you have to enter numbers");
+  process.exit();
+}
+
 const resultadoSuma = suma(a, b);
 const resultadoResta = resta(a, b);
 const resultadoMultiplicacion = multiplicacion(a, b);
